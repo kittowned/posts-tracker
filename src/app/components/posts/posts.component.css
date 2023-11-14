@@ -1,0 +1,35 @@
+.card-list-item {
+  cursor: pointer;
+  transition: all 50ms ease-in-out;
+  margin: .5rem 0;
+}
+
+.card-list-item:hover {
+  background: #f0f0f0;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+
+.body {
+  text-transform: capitalize;
+}
+
+.full-width {
+  width: 80%;
+}
+
+.new-button {
+  padding: 0.2rem 5%;
+  margin: 2%;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+}

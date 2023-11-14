@@ -1,0 +1,16 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+form {
+  padding: 1rem 0;
+}
+
+.form-button {
+  margin: 0 .5rem 0 0;
+}

@@ -1,0 +1,28 @@
+<form class="form">
+  <mat-form-field class="full-width">
+    <mat-label>Search by title</mat-label>
+    <input matInput placeholder="Dolor sit amet..." [formControl]="filter">
+  </mat-form-field>
+
+  <button type="button" class="new-button" mat-stroked-button routerLink="/posts/new">New post</button>
+</form>
+
+<ng-container *ngIf="(filteredPosts$ | async) as filteredPosts; else loading">
+  <mat-list role="list">
+    <mat-card class="card-list-item" *ngFor="let post of filteredPosts" role="listitem"
+    [routerLink]="['/posts/', post.id]">
+    <mat-card-header>
+      <mat-card-title>
+        <h3 class="title"><span>{{post.id}}.</span> {{post.title}}</h3>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <p>{{post.body}}</p>
+      </mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</mat-list>
+</ng-container>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

@@ -1,0 +1,25 @@
+<div class="container">
+  <app-back-button></app-back-button>
+
+  <form #postForm="ngForm" (ngSubmit)="save(postForm.value)">
+    <mat-form-field class="full-width">
+      <mat-label>Title</mat-label>
+      <input matInput #title="ngModel" [(ngModel)]="post.title" name="title" id="title" type="text" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Body</mat-label>
+      <textarea matInput #body="ngModel" [(ngModel)]="post.body" name="body" id="body" cols="20" rows="4" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>User ID</mat-label>
+      <input matInput #userId="ngModel" [(ngModel)]="post.userId" name="userId" id="userId" type="number" min="0" required>
+    </mat-form-field>
+
+    <button mat-stroked-button class="form-button" [disabled]='!postForm.valid' *ngIf="id === null">Create</button>
+    <button mat-stroked-button class="form-button" [disabled]='!postForm.valid' *ngIf="id !== null">Update</button>
+    <button mat-stroked-button class="form-button" color="warn" type="button" (click)="delete(id)" *ngIf="id !== null">Delete</button>
+
+  </form>
+</div>
